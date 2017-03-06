@@ -1,0 +1,8 @@
+FROM golang:latest
+
+RUN mkdir /app 
+ADD . /app/ 
+WORKDIR /app 
+RUN go build -o build/server server/server.go 
+
+CMD ["/app/build/server"]
